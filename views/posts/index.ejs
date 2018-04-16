@@ -26,7 +26,11 @@
           </div>
           <div class="card-action">
             <a href="/posts/<%= post._id %>" class="green-text">View Review</a>
-            <a href="/posts/<%= post._id %>/edit" class="orange-text">Edit Review</a>
+            <% if (locals.user) { %>
+              <% if((post.user && post.user.id) === locals.user.id) { %>
+                <a href="/posts/<%= post._id %>/edit" class="orange-text">Edit Review</a>
+              <% } %>
+            <% } %>
           </div>
         </div>
       </div>

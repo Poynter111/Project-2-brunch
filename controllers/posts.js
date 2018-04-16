@@ -24,6 +24,8 @@ function postsNew(req, res){
 
 function postsCreate(req, res){
   req.body.user = req.currentUser;
+  req.body.date = new Date(req.body.date);
+
   Post
     .create(req.body)
     .then(() => res.redirect('/posts'))

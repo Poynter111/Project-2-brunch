@@ -6,3 +6,11 @@
 <%= post.date %>
 <img src="<%= post.photo %>">
 <%= post.rating %>
+<% if (locals.user) { %>
+  <% if((post.user && post.user.id) === locals.user.id) { %>
+    <form action="/posts/<%= post.id %>" method="post">
+      <input type="hidden" name="_method" value="DELETE">
+      <button class="btn red">Delete Review</button>
+    </form>
+  <% } %>
+<% } %>
