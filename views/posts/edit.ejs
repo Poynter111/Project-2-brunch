@@ -1,0 +1,38 @@
+<div class="row">
+  <% if(messages.danger){ %>
+    <div class="col s12 l12">
+      <div class="card red lighten-3">
+        <div class="card-content red-text">
+          <span class="card-title"><%= messages.danger %></span>
+        </div>
+      </div>
+    </div>
+  <% } %>
+  <h2>Edit Review</h2>
+  <form class="col l12" action="/posts/<%= post.id %>" method="post">
+    <input type="hidden" name="_method" value="PUT">
+    <div class="input-field col l12">
+      <input type="text" name="name" id="name_field" value="<%= post.name %>">
+      <label for="name_field">Name of Resteraunt</label>
+    </div>
+    <div class="input-field col l12">
+      <input type="text" name="location" id="location_field" value="<%= post.location %>">
+      <label for="location_field">Location</label>
+    </div>
+    <div class="input-field col l12">
+      <input type="date" name="date" id="date_field" required value="<%= post.date %>">
+      <label for="date_field">Date</label>
+    </div>
+    <div class="input-field col l12">
+      <input type="text" name="photo" id="photo_field" required value="<%= post.photo %>">
+      <label for="photo_field">Link to photo</label>
+    </div>
+    <div class="input-field col l12">
+      <input type="number" name="rating" id="rating_field" value="<%= post.rating %>">
+      <label for="rating_field">Rating</label>
+    </div>
+    <div class="input-field col l12">
+      <button class="green btn">Creat New Review</button>
+    </div>
+  </form>
+</div>

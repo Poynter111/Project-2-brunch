@@ -23,8 +23,8 @@ router.route('/posts/new')
   .get(secureRoute, posts.new);
 router.route('/posts/:id')
   .get(posts.show)
-  .delete(posts.delete)
-  .put(posts.update);
+  .put(posts.update)
+  .delete(posts.delete);
 router.route('/posts/:id/edit')
   .get(posts.edit);
 //----------------Registrations-Start-------------------------------------------

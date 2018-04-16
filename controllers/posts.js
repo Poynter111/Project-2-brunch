@@ -13,7 +13,7 @@ function postsIndex(req, res){
 function postsShow(req, res){
   Post
     .findById(req.params.id)
-    .populate('photos')
+    .populate('user')
     .exec()
     .then(post => res.render('posts/show', {post}));
 }
@@ -37,20 +37,25 @@ function postsCreate(req, res){
 function postsEdit(req, res){
   Post
     .findById(req.params.id)
-    .populate('photos')
+    .populate('user')
     .exec()
     .then(post => res.render('posts/edit', {post}));
 }
 
 function postsUpdate(req, res){
+  console.log('before Post.findById');
   Post
     .findById(req.params.id)
     .exec()
     .then(post => {
+      console.log('inside then after findById');
       post = Object.assign(post, req.body);
       return post.save();
     })
-    .then(post => res.redirect(`/posts/${post._id}`));
+    .then(post => {
+      console.log('in then postsUpdate');
+      res.redirect(`/posts/${post.id}`);
+    });
 }
 
 function postsDelete(req, res){
