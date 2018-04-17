@@ -1,16 +1,33 @@
-<h1>I am the clicked on post</h1>
-<%= console.log('UserName=>', post.user.username) %>
-<%= post.user.username %>
-<%= post.name %>
-<%= post.location %>
-<%= post.date %>
-<img src="<%= post.photo %>">
-<%= post.rating %>
-<% if (locals.user) { %>
-  <% if((post.user && post.user.id) === locals.user.id) { %>
-    <form action="/posts/<%= post.id %>" method="post">
-      <input type="hidden" name="_method" value="DELETE">
-      <button class="btn red">Delete Review</button>
-    </form>
-  <% } %>
-<% } %>
+<div class="row">
+  <div class="col s12 m2"></div>
+  <div class="col s12 m8">
+    <div class="card large">
+      <div class="card-image">
+        <img src="<%= post.photo %>">
+        <span class="card-title black-text cyan lighten-4 opacity"><%= post.name %></span>
+      </div>
+      <div class="card-content">
+        <p><%= post.location %></p>
+        <p><%= post.date %></p>
+        <p><%= post.rating %></p>
+        <a href="#"><%= post.user.username %><span id="userlinks">'s other reviews</span></a>
+      </div>
+      <div class="card-action valign-wrapper">
+        <% if (locals.user) { %>
+          <% if((post.user && post.user.id) === locals.user.id) { %>
+            <a href="/posts/<%= post._id %>/edit" class="orange-text" id="floatright">Edit Review</a>
+          <% } %>
+        <% } %>
+        <% if (locals.user) { %>
+          <% if((post.user && post.user.id) === locals.user.id) { %>
+            <form action="/posts/<%= post.id %>" method="post">
+              <input type="hidden" name="_method" value="DELETE">
+              <button class="btn red">Delete Review</button>
+            </form>
+          <% } %>
+        <% } %>
+      </div>
+    </div>
+  </div>
+  <div class="col s12 m2"></div>
+</div>

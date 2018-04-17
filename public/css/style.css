@@ -1,7 +1,16 @@
+body{
+  font-family: 'Quicksand', sans-serif;
+}
 #userlinks{
   text-transform: lowercase;
 }
 
 #floatright{
-  float: right;
+
+float: right;
+}
+
+.opacity{
+  opacity: 0.7;
+
 }

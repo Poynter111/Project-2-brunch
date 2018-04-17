@@ -22,13 +22,14 @@
             <a href="/posts/<%= post._id %>" class="green-text">View Review</a>
             <% if (locals.user) { %>
               <% if((post.user && post.user.id) === locals.user.id) { %>
-                <a href="/posts/<%= post._id %>/edit" class="orange-text" id="floatright">Edit Review</a>
+                <a href="/posts/<%= post._id %>/edit" class="orange-text" class="right-align">Edit Review</a>
               <% } %>
             <% } %>
           </div>
           <div class="card-reveal">
             <span class="card-title grey-text text-darken-4"><%= post.name %><i class="material-icons right">close</i></span>
             <p> <%= post.rating %></p>
+            <i class="fas fa-star"></i>
             <p> <%= post.location %></p>
             <p> <%= post.date %></p>
             <div class="card-action">
