@@ -16,7 +16,7 @@ function createRoute(req, res) {
 
       // successfull login
       req.session.userId = user.id;
-      res.redirect('/users/user.id');
+      res.redirect('/');
     });
 }
 

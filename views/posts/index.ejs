@@ -2,9 +2,9 @@
   <h2>Reviews</h2>
   <div class="col s12">
     <ul class="tabs">
-      <li class="tab col s3"><a href="#test1" class="active">All Reviews</a></li>
+      <li class="tab col s6"><a href="#test1" class="active">All Reviews</a></li>
       <% if(locals.isLoggedIn) { %>
-      <li class="tab col s3"><a class="active" href="#test2">My Reviews</a></li>
+      <li class="tab col s6"><a class="active" href="#test2">My Reviews</a></li>
       <% } %>
     </ul>
   </div>
@@ -12,49 +12,59 @@
 <div class="row">
   <div id="test1" class="col s12">
     <% post.forEach(post => { %>
-      <div class="col s12 m6">
-        <div class="card green accent-3">
-          <div class="card-content white-text">
-            <span class="card-title"><%= post.name %></span>
-            <p> <%= post.location %></p>
-            <p> <%= post.date %></p>
-            <p> <%= post.user.username %></p>
-            <div class="card-image">
-              <img src="<%= post.photo %>">
-            </div>
-            <p> <%= post.rating %></p>
+      <div class="col s12 m4">
+        <div class="card">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="<%= post.photo %>">
           </div>
-          <div class="card-action">
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4"><%= post.name %><i class="material-icons right">more_vert</i></span>
             <a href="/posts/<%= post._id %>" class="green-text">View Review</a>
             <% if (locals.user) { %>
               <% if((post.user && post.user.id) === locals.user.id) { %>
-                <a href="/posts/<%= post._id %>/edit" class="orange-text">Edit Review</a>
+                <a href="/posts/<%= post._id %>/edit" class="orange-text" id="floatright">Edit Review</a>
               <% } %>
             <% } %>
           </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4"><%= post.name %><i class="material-icons right">close</i></span>
+            <p> <%= post.rating %></p>
+            <p> <%= post.location %></p>
+            <p> <%= post.date %></p>
+            <div class="card-action">
+              <a href="#"><%= post.user.username %><span id="userlinks">'s other reviews</span></a>
+            </div>
+          </div>
+
         </div>
       </div>
-      <% }) %>
+    <% }) %>
   </div>
   <% if(locals.isLoggedIn) {%>
    <div id="test2" class="col s12">
      <% post.forEach(post => { %>
        <% if((post.user && post.user.id) === locals.user.id) { %>
-       <div class="col s12 m6">
-         <div class="card green accent-3">
-           <div class="card-content white-text">
-           <span class="card-title"><%= post.name %></span>
+       <div class="col s12 m4">
+       <div class="card">
+         <div class="card-image waves-effect waves-block waves-light">
+           <img class="activator" src="<%= post.photo %>">
+         </div>
+         <div class="card-content">
+           <span class="card-title activator grey-text text-darken-4"><%= post.name %><i class="material-icons right">more_vert</i></span>
+           <a href="/posts/<%= post._id %>" class="green-text">View Review</a>
+           <% if (locals.user) { %>
+             <% if((post.user && post.user.id) === locals.user.id) { %>
+               <a href="/posts/<%= post._id %>/edit" class="orange-text">Edit Review</a>
+             <% } %>
+           <% } %>
+         </div>
+         <div class="card-reveal">
+           <span class="card-title grey-text text-darken-4"><%= post.user.username %><i class="material-icons right">close</i></span>
            <p> <%= post.location %></p>
            <p> <%= post.date %></p>
-           <p> <%= post.user.username %></p>
-           <img src="<%= post.photo %>">
            <p> <%= post.rating %></p>
-           </div>
-           <div class="card-action">
-             <a href="/posts/<%= post._id %>" class="green-text">View Review</a>
-             <a href="/posts/<%= post._id %>/edit" class="orange-text">Edit Review</a>
-           </div>
          </div>
+       </div>
        </div>
        <% } %>
      <% }) %>
