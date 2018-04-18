@@ -10,7 +10,7 @@ function usersShow(req, res){
         .find({ user: usershow._id })
         .exec()
         .then(posts => {
-          res.render('users/show', {usershow, posts }, console.log('after then',usershow));
+          res.render('users/show', {usershow, posts });
         });
     });
 }

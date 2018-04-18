@@ -6,11 +6,6 @@ function postsIndex(req, res){
     .populate('user')
     .exec()
     .then(posts => {
-      // post.date = post.date.split(' ')[0];
-      console.log(posts);
-
-      // posts.forEach(post => post.date = post.date.split(' ')[0]);
-
       res.render('posts/index', {posts});
     });
 }
@@ -50,17 +45,14 @@ function postsEdit(req, res){
 }
 
 function postsUpdate(req, res){
-  console.log('before Post.findById');
   Post
     .findById(req.params.id)
     .exec()
     .then(post => {
-      console.log('inside then after findById');
       post = Object.assign(post, req.body);
       return post.save();
     })
     .then(post => {
-      console.log('in then postsUpdate');
       res.redirect(`/posts/${post.id}`);
     });
 }

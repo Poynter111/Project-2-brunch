@@ -4,32 +4,42 @@
     <div class="card">
       <div class="card-image">
         <img src="<%= post.photo %>">
-        <span class="card-title black-text cyan lighten-4 opacity"><%= post.name %></span>
       </div>
       <div class="card-content">
-        <p><%= post.location %></p>
-        <p><%= post.date %></p>
-        Overall:
-        <% for (let i = 0; i < post.rating; i++) { %>
-          <i class="fas fa-star"></i>
-        <% } %>
-        </br>
-        Service:
+        <span class="card-title grey-text text-darken-4">
+          <a href="/users/<%= post.user._id %>"><%= post.user.username %><span id="userlinks">s reviews</span></a>
+        </span>
+        <p class="myTitle"><%= post.name %></p>
+        <span class="rating-wrap valign-wrapper">
+          <p>Overall:</p>
+          <% for (let i = 0; i < post.rating; i++) { %>
+            <i class="fas fa-star"></i>
+          <% } %>
+        </span>
+        <span class="rating-wrap valign-wrapper">
+        <p>Service:</p>
         <% for (let i = 0; i < post.service; i++) { %>
           <i class="fas fa-utensils"></i>
         <% } %>
-        </br>
-        Food:
+        </span>
+        <span class="rating-wrap valign-wrapper">
+        <p>Food:</p>
         <% for (let i = 0; i < post.food; i++) { %>
           <i class="material-icons pizza">local_pizza</i>
         <% } %>
-        </br>
-        Price:
+        </span>
+        <span class="rating-wrap valign-wrapper">
+        <p>Price:</p>
         <% for (let i = 0; i < post.price; i++) { %>
           <i class="far fa-money-bill-alt"></i>
         <% } %>
-        </br>
-        <a href="/users/<%= post.user._id %>"><%= post.user.username %><span id="userlinks">'s other reviews</span></a>
+        </span>
+        <span class="rating-wrap valign-wrapper">
+        <p>Location: <%= post.location %></p>
+        </span>
+        <span class="rating-wrap valign-wrapper">
+        <p>Date-created: <%= moment(post.date).format("MMM Do YY"); %> </p>
+        </span>
       </div>
       <div class="card-action valign-wrapper">
         <% if (locals.user) { %>

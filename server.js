@@ -43,7 +43,6 @@ app.use(customResponses);
 
 app.use((req, res, next) =>{
   if(!req.session.userId) return next();
-
   User
     .findById(req.session.userId)
     .then((user) =>{
@@ -53,8 +52,6 @@ app.use((req, res, next) =>{
       res.locals.isLoggedIn = true;
       next();
     });
-
-
 });
 
 app.use(routes);

@@ -36,10 +36,15 @@ float: right;
 .card{
   min-height: 450px;
 }
+.errormsg{
+  min-height: 50px;
+  text-align: center;
+
+}
 .rating-wrap{
   display: block;
   margin: 10px 0 10px 0;
 }
 .rating-wrap p{
-display: inline;
+  display: inline;
 }

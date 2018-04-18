@@ -13,30 +13,35 @@
           <p><a href="/posts/<%= posts._id %>" class="green-text">View Review</a></p>
         </div>
         <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4"><%= posts.name %><i class="material-icons right">close</i></span>
-          </br>
-          Overall:
-          <% for (let i = 0; i < posts.rating; i++) { %>
-            <i class="fas fa-star"></i>
-          <% } %>
-          </br>
-          Service:
+          <span class="card-title grey-text text-darken-4">
+            <%= posts.name %><i class="material-icons right">close</i>
+          </span>
+          <span class="rating-wrap valign-wrapper">
+            <p>Overall:</p>
+            <% for (let i = 0; i < posts.rating; i++) { %>
+              <i class="fas fa-star"></i>
+            <% } %>
+          </span>
+          <span class="rating-wrap valign-wrapper">
+          <p>Service:</p>
           <% for (let i = 0; i < posts.service; i++) { %>
             <i class="fas fa-utensils"></i>
           <% } %>
-          </br>
-          Food:
+          </span>
+          <span class="rating-wrap valign-wrapper">
+          <p>Food:</p>
           <% for (let i = 0; i < posts.food; i++) { %>
             <i class="material-icons pizza">local_pizza</i>
           <% } %>
-          </br>
-          Price:
+          </span>
+          <span class="rating-wrap valign-wrapper">
+          <p>Price:</p>
           <% for (let i = 0; i < posts.price; i++) { %>
             <i class="far fa-money-bill-alt"></i>
           <% } %>
-          </br>
-          <p> <%= posts.location %> </p>
-          <p> <%= posts.date %> </p>
+          </span>
+          <p> <%= posts.location %></p>
+          <p> <%= moment(posts.date).format("MMM Do YY"); %> </p>
         </div>
       </div>
   </div>

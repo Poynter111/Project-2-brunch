@@ -15,19 +15,19 @@ User.collection.drop();
 User
   .create([
     {
-      username: 'kenny',
+      username: 'Kenny',
       email: 'kenny@ga.co',
       password: 'p',
       passwordConfirmation: 'p'
     },
     {
-      username: 'billy',
+      username: 'Billy',
       email: 'billy@ga.co',
       password: 'p',
       passwordConfirmation: 'p'
     },
     {
-      username: 'tom',
+      username: 'Tom',
       email: 'tom@ga.co',
       password: 'p',
       passwordConfirmation: 'p'
@@ -39,7 +39,7 @@ User
       passwordConfirmation: 'p'
     },
     {
-      username: 'kate',
+      username: 'Kate',
       email: 'kate@ga.co',
       password: 'p',
       passwordConfirmation: 'p'
@@ -80,30 +80,30 @@ User
         location: 'Kings-cross',
         date: new Date(2015, 08, 02),
         photo: 'https://s3-media2.fl.yelpcdn.com/bphoto/7NKgygXE45a_BkdZuV0BqQ/348s.jpg',
-        rating: 4,
-        service: 4,
+        rating: 3,
+        service: 1,
         price: 4,
-        food: 4,
+        food: 2,
         user: users[1]._id
       },{
         name: 'Notes',
         location: 'Kings-cross',
         date: new Date(2015, 08, 02),
         photo: 'https://s3-media2.fl.yelpcdn.com/bphoto/7NKgygXE45a_BkdZuV0BqQ/348s.jpg',
-        rating: 4,
-        service: 4,
-        price: 4,
-        food: 4,
+        rating: 5,
+        service: 5,
+        price: 1,
+        food: 1,
         user: users[2]._id
       },{
         name: 'Notes',
         location: 'Kings-cross',
         date: new Date(2015, 08, 02),
         photo: 'https://s3-media2.fl.yelpcdn.com/bphoto/7NKgygXE45a_BkdZuV0BqQ/348s.jpg',
-        rating: 4,
-        service: 3,
-        price: 1,
-        food: 5,
+        rating: 1,
+        service: 1,
+        price: 5,
+        food: 1,
         user: users[2]._id
       },{
         name: 'Notes',
@@ -213,41 +213,3 @@ User
   })
   .catch(err => console.log(err))
   .finally(()=> mongoose.connection.close());
-
-
-
-
-
-
-// Post.create([{
-//   name: 'Caravan',
-//   location: 'Kings-cross',
-//   date: new Date(2015, 07, 15),
-//   photo: 'https://lh6.googleusercontent.com/-b0q2IGJX_WI/USIZDOR6v4I/AAAAAAAAFLw/sFNDy6qyI_k/s720/caravan+%286+of+8%29.jpg',
-//   rating: 4
-// },{
-//   name: 'Breakfast-Club',
-//   location: 'Soho',
-//   date: new Date(2016, 09, 23),
-//   photo: 'http://www.oubruncher.com/photos1/1456_1.jpg',
-//   rating: 5
-// },{
-//   name: 'Notes',
-//   location: 'Kings-cross',
-//   date: new Date(2015, 08, 02),
-//   photo: 'https://s3-media2.fl.yelpcdn.com/bphoto/7NKgygXE45a_BkdZuV0BqQ/348s.jpg',
-//   rating: 3
-// }])
-
-// .then((photos) => {
-//   return Album.create({
-//     name: 'Holidays in NYC',
-//     location: 'New York City',
-//     year: new Date(2015, 07, 15),
-//     photos: photos.map(photo => photo._id)
-//   })
-// })
-// .then(photos => console.log(`${photos.length} created`))
-
-// .catch(err => console.log(err))
-// .finally(()=> mongoose.connection.close())

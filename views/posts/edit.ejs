@@ -27,22 +27,52 @@
       <input type="text" name="photo" id="photo_field" required value="<%= post.photo %>">
       <label for="photo_field">Link to photo</label>
     </div>
-    <div class="input-field col l6">
-      <input type="number" name="rating" id="rating_field" value="<%= post.rating %>">
-      <label for="rating_field">Rating</label>
+    <div class="input-field col s12 l6">
+      <select name="rating" id="rating_field">
+        <option value="" disabled selected><%= post.rating %></option>
+        <option value="1">1 Star</option>
+        <option value="2">2 Star's</option>
+        <option value="3">3 Star's</option>
+        <option value="4">4 Star's</option>
+        <option value="5">5 Star's</option>
+      </select>
+      <label for="rating_field">Overall Rating</label>
     </div>
     <div class="input-field col l6">
-      <input type="number" name="service" id="service_field" value="<%= post.service %>">
-      <label for="service_field">Service</label>
+      <select name="service" id="service_field">
+        <option value="" disabled selected><%= post.service %></option>
+        <option value="1">1 Star</option>
+        <option value="2">2 Star's</option>
+        <option value="3">3 Star's</option>
+        <option value="4">4 Star's</option>
+        <option value="5">5 Star's</option>
+      </select>
+      <label for="service_field">Service rating</label>
     </div>
     <div class="input-field col l6">
-      <input type="number" name="price" id="price_field" value="<%= post.price %>">
-      <label for="price_field">Price</label>
+      <select name="price" id="price_field">
+        <option value="" disabled selected><%= post.price %></option>
+        <option value="1">1 Star</option>
+        <option value="2">2 Star's</option>
+        <option value="3">3 Star's</option>
+        <option value="4">4 Star's</option>
+        <option value="5">5 Star's</option>
+      </select>
+      <label for="price_field">Price rating</label>
     </div>
     <div class="input-field col l6">
-      <input type="number" name="food" id="food_field" value="<%= post.food %>">
-      <label for="food_field">Food</label>
+      <select name="food" id="food_field">
+        <option value="" disabled selected><%= post.food %></option>
+        <option value="1">1 Star</option>
+        <option value="2">2 Star's</option>
+        <option value="3">3 Star's</option>
+        <option value="4">4 Star's</option>
+        <option value="5">5 Star's</option>
+      </select>
+      <label for="food_field">Food rating</label>
     </div>
+
+
     <div class="input-field col l12">
       <button class="green btn">Save Review</button>
     </div>
