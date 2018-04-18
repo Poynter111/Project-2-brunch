@@ -12,7 +12,6 @@ float: right;
 
 .opacity{
   opacity: 0.7;
-
 }
 
 .fa-star{
@@ -30,4 +29,17 @@ float: right;
 .fa-money-bill-alt{
     font-size: 1.5em;
     color: #00A03E;
+}
+.myTitle{
+  font-size: 25px;
+}
+.card{
+  min-height: 450px;
+}
+.rating-wrap{
+  display: block;
+  margin: 10px 0 10px 0;
+}
+.rating-wrap p{
+display: inline;
 }

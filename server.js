@@ -1,5 +1,6 @@
 const express                 = require('express');
 const app                     = express();
+app.locals.moment             = require('moment');
 const bodyParser              = require('body-parser');
 const methodOverride          = require('method-override');
 const morgan                  = require('morgan');
@@ -11,6 +12,7 @@ const {port, databaseURI}     = require('./config/environment');
 const customResponses         = require('./lib/customResponses');
 const routes                  = require('./config/routes');
 const User                    = require('./models/user');
+
 
 mongoose.connect(databaseURI);
 

@@ -1,7 +1,7 @@
 {
   "name": "Project-2-Brunch",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "repository": "git@github.com:Poynter111/Project-2-brunch.git",
   "author": "Poynter111 <alex.poynter111@gmail.com>",
   "license": "MIT",
@@ -15,6 +15,7 @@
     "express-flash": "^0.0.2",
     "express-session": "^1.15.6",
     "method-override": "^2.3.10",
+    "moment": "^2.22.1",
     "mongoose": "^5.0.14",
     "morgan": "^1.9.0"
   }

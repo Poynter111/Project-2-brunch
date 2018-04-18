@@ -5,8 +5,13 @@ function postsIndex(req, res){
     .find()
     .populate('user')
     .exec()
-    .then(post => {
-      res.render('posts/index', {post});
+    .then(posts => {
+      // post.date = post.date.split(' ')[0];
+      console.log(posts);
+
+      // posts.forEach(post => post.date = post.date.split(' ')[0]);
+
+      res.render('posts/index', {posts});
     });
 }
 
