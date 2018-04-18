@@ -27,13 +27,33 @@
             <% } %>
           </div>
           <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4"><%= post.name %><i class="material-icons right">close</i></span>
-            <p> <%= post.rating %></p>
-            <i class="fas fa-star"></i>
+            <span class="card-title grey-text text-darken-4"><%= post.user.username %><i class="material-icons right">close</i></span>
+            </br>
+            <p><%= post.name %></p>
+            Overall:
+            <% for (let i = 0; i < post.rating; i++) { %>
+              <i class="fas fa-star"></i>
+            <% } %>
+            </br>
+            Service:
+            <% for (let i = 0; i < post.service; i++) { %>
+              <i class="fas fa-utensils"></i>
+            <% } %>
+            </br>
+            Food:
+            <% for (let i = 0; i < post.food; i++) { %>
+              <i class="material-icons pizza">local_pizza</i>
+            <% } %>
+            </br>
+            Price:
+            <% for (let i = 0; i < post.price; i++) { %>
+              <i class="far fa-money-bill-alt"></i>
+            <% } %>
+            </br>
             <p> <%= post.location %></p>
             <p> <%= post.date %></p>
             <div class="card-action">
-              <a href="#"><%= post.user.username %><span id="userlinks">s other reviews</span></a>
+              <a href="/users/<%= post.user._id %>"><%= post.user.username %><span id="userlinks">s other reviews</span></a>
             </div>
           </div>
 

@@ -9,8 +9,27 @@
       <div class="card-content">
         <p><%= post.location %></p>
         <p><%= post.date %></p>
-        <p><%= post.rating %></p>
-        <a href="#"><%= post.user.username %><span id="userlinks">'s other reviews</span></a>
+        Overall:
+        <% for (let i = 0; i < post.rating; i++) { %>
+          <i class="fas fa-star"></i>
+        <% } %>
+        </br>
+        Service:
+        <% for (let i = 0; i < post.service; i++) { %>
+          <i class="fas fa-utensils"></i>
+        <% } %>
+        </br>
+        Food:
+        <% for (let i = 0; i < post.food; i++) { %>
+          <i class="material-icons pizza">local_pizza</i>
+        <% } %>
+        </br>
+        Price:
+        <% for (let i = 0; i < post.price; i++) { %>
+          <i class="far fa-money-bill-alt"></i>
+        <% } %>
+        </br>
+        <a href="/users/<%= post.user._id %>"><%= post.user.username %><span id="userlinks">'s other reviews</span></a>
       </div>
       <div class="card-action valign-wrapper">
         <% if (locals.user) { %>

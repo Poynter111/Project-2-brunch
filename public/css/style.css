@@ -14,3 +14,20 @@ float: right;
   opacity: 0.7;
 
 }
+
+.fa-star{
+  color: #E8B71A;
+  font-size: 1.5em;
+}
+.fa-utensils{
+  color: #7F7F7F;
+    font-size: 1.5em;
+}
+.pizza{
+  color: #F2671F;
+  font-size: 2em;
+}
+.fa-money-bill-alt{
+    font-size: 1.5em;
+    color: #00A03E;
+}

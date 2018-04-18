@@ -8,12 +8,10 @@ function createRoute(req, res) {
   User
     .findOne({ email: req.body.email })
     .then((user) => {
-      console.log(user);
       if(!user || !user.validatePassword(req.body.password)){
         req.flash('danger','Wrong credentials');
         return res.status(401).render('sessions/index');
       }
-
       // successfull login
       req.session.userId = user.id;
       res.redirect('/');

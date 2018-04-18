@@ -1,4 +1,3 @@
-<h1>BRUNCH</h1>
 <div class="row">
   <% if(messages.danger){ %>
     <div class="col s12 l12">
@@ -9,4 +8,31 @@
       </div>
     </div>
   <% } %>
+</div>
+<div class="row  center-align">
+  <div class="col s12 m12">
+    <h2>Welcome to</h2>
+    <h1>London Breakies</h1>
+    <div class="row">
+      <div class="col s12 m12">
+        <p>
+          Here at London Breakies we're brunch mad and are always looking for a new place
+          </br>to enjoy a fantastic meal wether its a boozy late saturday brunch with friends
+          </br>or a quite chilled family occassion.
+          </br>Our site is here to help you find the perfect location for all of your brunching needs.
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12 m12">
+        <% if(locals.isLoggedIn){%>
+          <a href="/posts" class="waves-effect waves-light btn-large">Reviews</a>
+          <a href="/posts/new" class="waves-effect waves-light btn-large">Create New Review</a>
+        <% } else { %>
+          <a href="/signup" class="waves-effect waves-light btn-large">Sign Up</a>
+          <a href="/signin" class="waves-effect waves-light btn-large">Sign In</a>
+        <% } %>
+      </div>
+    </div>
+</div>
 </div>

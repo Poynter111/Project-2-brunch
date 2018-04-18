@@ -1,1 +1,44 @@
-<h1>USER SHOW PAGE</h1>
+<div class="row">
+<h1><%= usershow.username %>s Reviews</h1>
+</div>
+<div class="row">
+  <% posts.forEach(posts => { %>
+  <div class="col s12 m4">
+      <div class="card">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" src="<%= posts.photo %>">
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4"><%= posts.name %><i class="material-icons right">more_vert</i></span>
+          <p><a href="/posts/<%= posts._id %>" class="green-text">View Review</a></p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4"><%= posts.name %><i class="material-icons right">close</i></span>
+          Overall:
+          <% for (let i = 0; i < posts.rating; i++) { %>
+            <i class="fas fa-star"></i>
+          <% } %>
+          </br>
+          Service:
+          <% for (let i = 0; i < posts.service; i++) { %>
+            <i class="fas fa-utensils"></i>
+          <% } %>
+          </br>
+          Food:
+          <% for (let i = 0; i < posts.food; i++) { %>
+            <i class="material-icons pizza">local_pizza</i>
+          <% } %>
+          </br>
+          Price:
+          <% for (let i = 0; i < posts.price; i++) { %>
+            <i class="far fa-money-bill-alt"></i>
+          <% } %>
+          </br>
+          <p> <%= posts.location %> </p>
+          <p> <%= posts.date %> </p>
+
+        </div>
+      </div>
+  </div>
+  <% }) %>
+</div>

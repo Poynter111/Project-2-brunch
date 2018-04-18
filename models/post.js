@@ -6,6 +6,9 @@ const postSchema = new mongoose.Schema({
   date: Date,
   photo: String,
   rating: {type: Number, min: 1, max: 5, default: 3},
+  service: {type: Number, min: 1, max: 5, default: 3},
+  price: {type: Number, min: 1, max: 5, default: 3},
+  food: {type: Number, min: 1, max: 5, default: 3},
   user: {type: mongoose.Schema.ObjectId, ref: 'User'}
 });
 

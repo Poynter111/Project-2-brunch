@@ -1,11 +1,12 @@
 <nav>
     <div class="nav-wrapper grey lighten-2">
       <div class="container">
-      <a href="/" class="brand-logo">Logo</a>
+      <a href="/" class="brand-logo">London Breakies</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <% if(locals.isLoggedIn){%>
           <li><a href="/logout">Logout (Signed in as <%= locals.user.username %>)</a></li>
+          <% console.log('in navbar--->',locals.user)%>
           <% } else { %>
             <li><a href="/signup">Sign Up</a></li>
             <li><a href="/signin">Sign In</a></li>
