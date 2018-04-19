@@ -1,6 +1,7 @@
 body{
   font-family: 'Quicksand', sans-serif;
 }
+
 #userlinks{
   text-transform: lowercase;
 }
@@ -32,9 +33,10 @@ float: right;
 }
 .myTitle{
   font-size: 25px;
+  margin: 3px 0 3px 0;
 }
 .card{
-  min-height: 450px;
+  min-height: 350px;
 }
 .errormsg{
   min-height: 50px;
@@ -47,4 +49,9 @@ float: right;
 }
 .rating-wrap p{
   display: inline;
+}
+.spacer{
+  margin: 100px;
+  display: block;
+
 }
